@@ -21,21 +21,17 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'client/app')));
 
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-
-app.get('/', routes.index);
-
-
 /**
  *
  */
-app.post('/api/subscribers/', api.subscriber.create);
+app.post('/api/subscribers', api.subscriber.create);
 app.get('/api/subscribers/:id([a-fA-f0-9]{24})', api.subscriber.read);
 app.put('/api/subscribers/:id([a-fA-f0-9]{24})', api.subscriber.update);
 app.delete('/api/subscribers/:id([a-fA-f0-9]{24})', api.subscriber.delete);

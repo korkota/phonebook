@@ -1,0 +1,27 @@
+
+<div class="container">
+    <h1>Subscriber info</h1>
+
+    <form novalidate="novalidate" class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label" for="inputName">Name:</label>
+
+            <div class="controls">
+                <input type="text" id="inputName" ng-model="name"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputPhoneNumber">Phone number:</label>
+
+            <div class="controls">
+                <input type="text" id="inputPhoneNumber" ng-model="phoneNumber"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <a ng-click="cancel()" class="btn btn-small">cancel</a>
+                <a ng-click="create()" class="btn btn-small btn-primary">add</a>
+            </div>
+        </div>
+    </form>
+</div>
