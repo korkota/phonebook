@@ -1,0 +1,8 @@
+{
+  "application": {
+    "port": 80
+  },
+  "database": {
+    "uri": "mongodb://localhost/phonebook"
+  }
+}
