@@ -1,27 +1,33 @@
-
 <div class="container">
-    <h1>Subscriber info</h1>
+    <div class="modal" style="position: relative; top: auto; left: auto; right: auto; margin: 0 auto 20px; z-index: 1; max-width: 100%;">
+        <div class="modal-header">
+            <h3>Subscriber info</h3>
+        </div>
+        <div class="modal-body">
+            <form name="subscriberForm" class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Name:</label>
 
-    <form novalidate="novalidate" class="form-horizontal">
-        <div class="control-group">
-            <label class="control-label" for="inputName">Name:</label>
+                    <div class="controls">
+                        <input type="text" id="inputName" ng-model="subscriber.name" ng-minlength="1" ng-maxlength="100" required/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputPhoneNumber">Phone number:</label>
 
-            <div class="controls">
-                <input type="text" id="inputName" ng-model="name"/>
+                    <div class="controls">
+                        <input type="text" id="inputPhoneNumber" ng-model="subscriber.phoneNumber" ng-maxlength="100"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <div class="control-group">
+                <div class="controls">
+                    <a ng-click="cancel()" class="btn">Cancel</a>
+                    <button ng-disabled="!subscriberForm.$valid" ng-click="create()" class="btn btn-primary">Add</button>
+                </div>
             </div>
         </div>
-        <div class="control-group">
-            <label class="control-label" for="inputPhoneNumber">Phone number:</label>
-
-            <div class="controls">
-                <input type="text" id="inputPhoneNumber" ng-model="phoneNumber"/>
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <a ng-click="cancel()" class="btn btn-small">cancel</a>
-                <a ng-click="create()" class="btn btn-small btn-primary">add</a>
-            </div>
-        </div>
-    </form>
+    </div>
 </div>

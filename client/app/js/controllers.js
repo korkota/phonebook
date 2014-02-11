@@ -28,8 +28,7 @@ phonebookControllers.controller('SubscribersListCtrl', ['$scope', 'Subscribers',
 
 phonebookControllers.controller('SubscriberAddCtrl', ['$scope', '$location', 'Subscribers',
   function($scope, $location, Subscribers) {
-    $scope.name = '';
-    $scope.phoneNumber = '';
+    $scope.subscriber = {name: '', phoneNumber: ''};
 
     $scope.create = function() {
       var success = function(temp) {
@@ -41,8 +40,8 @@ phonebookControllers.controller('SubscriberAddCtrl', ['$scope', '$location', 'Su
       };
 
       Subscribers.create({
-          name: $scope.name,
-          phoneNumber: $scope.phoneNumber
+          name: $scope.subscriber.name,
+          phoneNumber: $scope.subscriber.phoneNumber
         },
         success,
         fail
